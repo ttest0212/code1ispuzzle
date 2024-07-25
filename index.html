@@ -6,12 +6,16 @@
     <title>Page d'accueil</title>
     <link rel="stylesheet" href="css/background.css"> <!-- Inclure le CSS externe -->
     <style>
+        /* Reset the margin and padding of the entire page */
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
             overflow: hidden;
+            font-family: 'Courier New', monospace; /* Set the default font family */
         }
+        
+        /* Background video styling */
         .background-video {
             position: absolute;
             top: 0;
@@ -19,28 +23,50 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: -1;
+            z-index: -1; /* Send the video to the background */
         }
+
+        /* Styling for the Welcome header */
         h1 {
-            font-size: 3rem;
-            text-align: center;
-            margin-top: 20vh;
-            color: lime;
+            font-size: 3rem; /* Set font size */
+            text-align: center; /* Center align the text */
+            margin-top: 20vh; /* Space the header from the top */
+            color: lime; /* Set font color */
+            font-family: 'Courier New', monospace; /* Use a hacker-themed font */
             position: relative;
-            z-index: 1;
+            z-index: 1; /* Bring text above the background */
         }
+
+        /* Styling for the continue link */
         .continue-link {
             display: block;
-            text-align: center;
-            margin-top: 2rem;
-            font-size: 1.5rem;
-            color: lime;
-            text-decoration: none;
+            text-align: center; /* Center align the link */
+            margin-top: 2rem; /* Add space above the link */
+            font-size: 1.5rem; /* Set font size */
+            color: lime; /* Set font color */
+            text-decoration: none; /* Remove underline */
             position: relative;
-            z-index: 1;
+            z-index: 1; /* Ensure link is above the background */
         }
+        
+        /* Underline the continue link on hover */
         .continue-link:hover {
             text-decoration: underline;
+        }
+
+        /* Styling for the warning message */
+        .warning {
+            position: absolute; /* Position the warning text */
+            bottom: 10%; /* Position from the bottom of the page */
+            left: 50%; /* Center align the text */
+            transform: translateX(-50%); /* Correct the centering */
+            font-size: 1.2rem; /* Set font size */
+            color: rgb(255, 0, 0); /* Set font color to red */
+            text-align: center; /* Center align the text */
+            width: 80%; /* Set width of text */
+            max-width: 600px; /* Limit maximum width of the text */
+            font-family: 'Courier New', monospace; /* Use a hacker-themed font */
+            z-index: 1; /* Ensure text is above the background */
         }
     </style>
 </head>
@@ -49,7 +75,10 @@
         <source src="media/Green.mp4" type="video/mp4"> <!-- Vérifiez que le nom du fichier est correct -->
         Votre navigateur ne supporte pas la vidéo.
     </video>
-    <h1>Welcome</h1>
-    <a class="continue-link" href="2.html">Cliquez ici pour continuer</a>
+    <h1>Intrusion Détectée</h1>
+    <a class="continue-link" href="2.html">Ne cliquez pas ici… Si vous tenez à votre sécurité…</a>
+    <p class="warning"> <!-- Warning message in red -->
+        <strong>AVERTISSEMENT :</strong> Vous avez pénétré dans un royaume sans échappatoire. Une fois à l'intérieur, il n'y a plus de retour en arrière. Avancez avec prudence, et souvenez-vous, des yeux observent chacun de vos mouvements. Résolvez les mystères pour découvrir les secrets cachés, ou restez piégé pour toujours. Faites votre choix avec sagesse.
+    </p>
 </body>
 </html>

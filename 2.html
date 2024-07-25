@@ -48,11 +48,20 @@
             z-index: -1;
         }
 
+        /* Définition de la police numérique depuis le fichier local */
+        @font-face {
+            font-family: 'Digital';
+            src: url('media/digital.TTF') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         h1 {
             font-size: 3rem;
             text-align: center;
             margin-top: 20vh;
             color: lime;
+            font-family: 'Digital', monospace; /* Police numérique locale */
         }
 
         .login-container {
@@ -82,15 +91,15 @@
 
         .indicator {
             display: inline-block;
-            width: 20px;
-            height: 20px;
+            width: 25px;
+            height: 25px;
             border-radius: 50%;
             background-color: gray; /* Couleur par défaut */
             margin-left: 10px; /* Espace entre le champ de texte et l'indicateur */
         }
 
         .indicator.correct {
-            background-color: lightblue; /* Couleur pour correct */
+            background-color: rgb(255, 191, 0); /* Couleur pour correct */
         }
 
         .indicator.incorrect {
@@ -146,7 +155,7 @@
         Votre navigateur ne supporte pas la vidéo.
     </video>
 
-    <h1 id="headerText">Welcome</h1>
+    <h1 id="headerText">Welcome to 11:34</h1>
 
     <div class="hearts-container">
         <div class="hearts-counter" id="heartsCounter">X5</div>

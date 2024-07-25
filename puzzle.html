@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Puzzle Crypté</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"> <!-- Import VT323 font -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Countdown container -->
+    <div id="countdown-container" class="countdown-container">
+        <div id="countdown-timer" class="countdown-timer"></div>
+    </div>
+
+    <!-- Page de contenu cachée -->
+    <div id="end-content">
+        <h1>Le Puzzle Crypté</h1>
+        <div class="content">
+            <div class="message-container"></div>
+            <div class="grid">
+                <div class="cell" id="cell-1">
+                    <img src="media/1.png" alt="Image 1" class="hidden">
+                    <input type="text" placeholder="Code 1">
+                    <p>Indice 1 : ...</p>
+                </div>
+                <div class="cell" id="cell-2">
+                    <img src="media/2.png" alt="Image 2" class="hidden">
+                    <input type="text" placeholder="Code 2">
+                    <p>Indice 2 : ...</p>
+                </div>
+                <div class="cell" id="cell-3">
+                    <img src="media/3.png" alt="Image 3" class="hidden">
+                    <input type="text" placeholder="Code 3">
+                    <p>Indice 3 : ...</p>
+                </div>
+                <div class="cell" id="cell-4">
+                    <img src="media/4.png" alt="Image 4" class="hidden">
+                    <input type="text" placeholder="Code 4">
+                    <p>Indice 4 : ...</p>
+                </div>
+                <div class="cell" id="cell-5">
+                    <!-- Blank cell -->
+                    <p>Indice 5 : ...</p>
+                </div>
+                <div class="cell" id="cell-6">
+                    <img src="media/6.png" alt="Image 6" class="hidden">
+                    <input type="text" placeholder="Code 6">
+                    <p>Indice 6 : ...</p>
+                </div>
+                <div class="cell" id="cell-7">
+                    <img src="media/7.png" alt="Image 7" class="hidden">
+                    <input type="text" placeholder="Code 7">
+                    <p>Indice 7 : ...</p>
+                </div>
+                <div class="cell" id="cell-8">
+                    <img src="media/8.png" alt="Image 8" class="hidden">
+                    <input type="text" placeholder="Code 8">
+                    <p>Indice 8 : ...</p>
+                </div>
+                <div class="cell" id="cell-9">
+                    <img src="media/9.png" alt="Image 9" class="hidden">
+                    <input type="text" placeholder="Code 9">
+                    <p>Indice 9 : ...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background music for countdown -->
+    <audio id="background-music" loop>
+        <source src="media/clock.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Button to toggle ticking sound -->
+    <button id="toggle-sound-button" class="toggle-sound-button">Arrêter le son</button>
+
+    <script src="js/script.js"></script>
+    <div id="canvas_container"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r120/three.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

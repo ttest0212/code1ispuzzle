@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Suivante</title>
+    <style>
+        /* CSS pour la page suivante */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: black;
+        }
+
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .content-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-family: monospace;
+            display: none; /* Cache le message jusqu'à la fin de la vidéo */
+        }
+
+        .retry-button, .confirm-button, .cancel-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .retry-button {
+            background-color: red;
+        }
+
+        .retry-button:hover {
+            background-color: darkred;
+        }
+
+        .confirm-button {
+            background-color: green;
+        }
+
+        .confirm-button:hover {
+            background-color: darkgreen;
+        }
+
+        .cancel-button {
+            background-color: grey;
+        }
+
+        .cancel-button:hover {
+            background-color: darkgrey;
+        }
+
+        .confirmation-container {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <video class="background-video" id="backgroundVideo" autoplay muted>
+        <source src="media/yes.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo.
+    </video>
+
+    <audio id="backgroundAudio" src="media/yes.mp3"></audio>
+
+    <div class="content-container" id="contentContainer">
+        <h1>Page Suivante</h1>
+        <p>Le contenu de cette page est prêt. Vous pouvez maintenant avancer.</p>
+    </div>
+
+    <div class="confirmation-container" id="confirmationContainer">
+        <h1>Voulez-vous vraiment continuer ?</h1>
+        <button class="confirm-button" onclick="confirmRedirect()">Oui</button>
+        <button class="cancel-button" onclick="cancelRedirect()">Non</button>
+    </div>
+
+    <script>
+        const video = document.getElementById('backgroundVideo');
+        const audio = document.getElementById('backgroundAudio');
+        const contentContainer = document.getElementById('contentContainer');
+        const confirmationContainer = document.getElementById('confirmationContainer');
+
+        // Assurez-vous que la vidéo commence à jouer
+        video.addEventListener('play', () => {
+            audio.play().catch(error => {
+                console.log('Erreur lors de la lecture de l\'audio:', error);
+            });
+        });
+
+        // Afficher le message après la fin de la vidéo
+        video.addEventListener('ended', () => {
+            audio.pause(); // Arrête l'audio si la vidéo se termine
+            audio.currentTime = 0; // Réinitialise le temps de l'audio
+            contentContainer.style.display = 'none'; // Cache le message initial
+            confirmationContainer.style.display = 'block'; // Affiche la confirmation
+        });
+
+        // Fonction pour confirmer la redirection
+        function confirmRedirect() {
+            window.location.href = 'puzzle.html'; // Redirige vers la page puzzle.html
+        }
+
+        // Fonction pour annuler la redirection
+        function cancelRedirect() {
+            window.location.href = 'autrepage.html'; // Redirige vers autrepage.html
+        }
+    </script>
+</body>
+</html>
