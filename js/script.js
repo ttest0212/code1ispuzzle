@@ -1,13 +1,13 @@
 const correctCodes = {
-    'cell-1': 'code1',
-    'cell-2': 'code2',
-    'cell-3': 'code3',
-    'cell-4': 'code4',
+    'cell-1': 'puzzle',
+    'cell-2': '@code1ispuzzle',
+    'cell-3': '6,75',
+    'cell-4': '911',
     'cell-5': 'code5',
-    'cell-6': 'code6',
-    'cell-7': 'code7',
-    'cell-8': 'code8',
-    'cell-9': 'code9',
+    'cell-6': 'urbeautiful',
+    'cell-7': 'liebe',
+    'cell-8': 'feloussa',
+    'cell-9': 'MERIOUMA',
 };
 
 document.querySelectorAll('.cell').forEach(cell => {
@@ -34,7 +34,7 @@ function checkVictory() {
     if (allRevealed) {
         const cell5 = document.getElementById('cell-5');
         const button = document.createElement('button');
-        button.textContent = 'Emmm, il manque une pièce on dirait';
+        button.textContent = 'Emmm, il manque une pièce on dirait "click ici"';
         button.addEventListener('click', showCompleteImage);
         cell5.innerHTML = '';
         cell5.appendChild(button);

@@ -37,7 +37,7 @@ h1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
-    width: 450px;
+    width: 600px;
     margin: 0 auto;
 }
 
@@ -181,18 +181,18 @@ p {
 
 .countdown-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    color: #00ff00;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-family: 'VT323', monospace;
+    justify-content: center; /* Centre le texte horizontalement à l'intérieur du conteneur */
+    align-items: center;     /* Centre le texte verticalement à l'intérieur du conteneur */
+    position: fixed;         /* Permet de positionner l'élément de manière fixe par rapport à l'écran */
+    bottom: 20px;            /* Place le conteneur à 20 pixels du bas de l'écran */
+    left: 20px;              /* Place le conteneur à 20 pixels du côté gauche de l'écran */
+    z-index: 1;              /* Assure que l'élément reste au-dessus des autres contenus */
+    color: #00ff00;          /* Définit la couleur du texte en vert */
+    padding: 10px 20px;      /* Ajoute un espace intérieur autour du texte */
+    border-radius: 5px;      /* Arrondit les coins du conteneur */
+    font-family: 'VT323', monospace; /* Utilise la police VT323 pour le texte */
 }
+
 
 .countdown-timer {
     font-size: 2rem;
